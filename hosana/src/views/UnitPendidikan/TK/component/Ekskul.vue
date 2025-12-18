@@ -1,0 +1,86 @@
+<script setup>
+import { ref, onMounted } from "vue";
+import axios from "axios";
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
+const kegiatanList = ref([]);
+
+const fetchKegiatan = async () => {
+  try {
+    const res = await axios.get(`${API_BASE_URL}/api/v1/kegiatan/all?unit=TK`);
+    kegiatanList.value = res.data.filter(item => item && item.id);
+  } catch (error) {
+    console.error("Gagal memuat kegiatan:", error);
+  }
+};
+
+onMounted(() => {
+  fetchKegiatan();
+}); 
+</script>
+
+
+<template>
+  <div class="mx-auto px-5 pb-15">
+    <div data-aos="fade-left" class="text-center mb-10">
+    <h1  class ="font-bold md:text-4xl text-3xl text-(--tk) ">
+      KEGIATAN KAMI
+    </h1>
+    <h3 class="text-[#331027] text-sm">Beragam kegiatan seru dan edukatif untuk mendukung tumbuh kembang anak sejak dini.</h3>
+</div>
+    <div
+      class="container mx-auto md:gap-10 gap-5 flex flex-col md:flex-row flex-wrap  items-center justify-evenly"
+    >  
+      <div
+        v-for="item in kegiatanList"
+        :key="item.id"
+        class="md:w-[300px] w-full md:px-0 "
+        data-aos="fade-left"
+      >
+        <!-- Judul -->
+        <div
+          class="w-full h-full shadow-lg py-2 rounded-lg bg-(--gstk) flex items-center justify-center"
+        >
+          <h3 class="text-base font-bold text-(--tk)">
+            {{ item.namaKegiatan }}
+          </h3>
+        </div>
+
+        <!-- Konten -->
+        <div
+          class="w-full mt-3 p-5 rounded-lg h-full shadow-lg  bg-(--gstk)"
+        >
+          <!-- Foto -->
+          <div class="w-full mb-3 rounded-lg">
+            <img
+              v-if="item.image"
+              :src="`${API_BASE_URL}/storage/${item.image}`"
+              alt="Foto Kegiatan"
+              class="rounded-lg w-full h-[150px] object-cover"
+            />
+            <!-- <img
+              v-else
+              src="@/assets/images/default.jpg"
+              alt="Default"
+              class="rounded-lg w-full h-[200px] object-cover"
+            /> -->
+          </div>
+
+          <!-- Deskripsi -->
+          <div class="rounded-lg bg-(--gstk) h-full text-xs text-justify">
+            <p>{{ item.deskripsi }}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Jika belum ada data -->
+      <p v-if="kegiatanList.length === 0" class="text-gray-500 text-center mt-10">
+        Belum ada data ekstrakurikuler.
+      </p>
+    </div>
+  </div>
+</template>
+
+<style scoped>
+
+</style>

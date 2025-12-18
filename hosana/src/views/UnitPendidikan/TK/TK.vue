@@ -1,0 +1,32 @@
+<script setup>
+import Navbar from './Navbar.vue';
+import Image from './component/Image.vue';
+import ProgramTK from './component/ProgramTK.vue';
+import Ekskul from './component/Ekskul.vue';
+import Fasilitas from './component/Fasilitas.vue';
+import Footer from './Footer.vue';
+import Foto from './component/Foto.vue';
+</script>
+
+<template>
+<Navbar />
+<Image />
+<ProgramTK />
+  <!-- <div
+    class="w-screen h-[200px] border-1 bg-center bg-no-repeat bg-cover"
+    :style="{ backgroundImage: `url(${wave})` }"
+  ></div> -->
+
+  
+<Ekskul />
+<Foto />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#fae6f6" fill-opacity="1" d="M0,96L14.1,85.3C28.2,75,56,53,85,80C112.9,107,141,181,169,208C197.6,235,226,213,254,208C282.4,203,311,213,339,186.7C367.1,160,395,96,424,101.3C451.8,107,480,181,508,197.3C536.5,213,565,171,593,149.3C621.2,128,649,128,678,138.7C705.9,149,734,171,762,160C790.6,149,819,107,847,112C875.3,117,904,171,932,192C960,213,988,203,1016,218.7C1044.7,235,1073,277,1101,256C1129.4,235,1158,149,1186,138.7C1214.1,128,1242,192,1271,186.7C1298.8,181,1327,107,1355,96C1383.5,85,1412,139,1426,165.3L1440,192L1440,320L1425.9,320C1411.8,320,1384,320,1355,320C1327.1,320,1299,320,1271,320C1242.4,320,1214,320,1186,320C1157.6,320,1129,320,1101,320C1072.9,320,1045,320,1016,320C988.2,320,960,320,932,320C903.5,320,875,320,847,320C818.8,320,791,320,762,320C734.1,320,706,320,678,320C649.4,320,621,320,593,320C564.7,320,536,320,508,320C480,320,452,320,424,320C395.3,320,367,320,339,320C310.6,320,282,320,254,320C225.9,320,198,320,169,320C141.2,320,113,320,85,320C56.5,320,28,320,14,320L0,320Z"></path></svg>
+    <div class="-mt-[20px]">
+<Fasilitas />
+</div>
+<Footer />
+
+</template>
+
+<style>
+</style>

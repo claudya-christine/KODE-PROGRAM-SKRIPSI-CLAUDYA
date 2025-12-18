@@ -1,0 +1,40 @@
+
+@import "tailwindcss";
+
+
+/* @import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --mont-serrat: "Montserrat", sans-serif;
+  --font-poppins: 'Poppins', sans-serif;
+  --font-barlow: 'Barlow Semi Condensed', sans-serif;
+  --primary: #1f366a;
+  --tk: #fc12a6;
+  --gstk: #fae6f6;
+  --sd: #6ac31c;
+  --gssd: #dafcca;
+  --smp: #e09f24;
+  --gssmp: #fbe5bc;
+  --smk: #1e61a6;
+  --gssmk: #cae2fb;
+  --secondary: #4f4f4f;
+}
+
+body {
+  font-family: var(--mont-serrat), sans-serif;
+  background-color: #f9fafb;
+  color: #111827;
+}
+
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  /* overflow-x: hidden; */
+
+}
+
+
